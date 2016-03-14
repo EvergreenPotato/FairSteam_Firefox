@@ -1,0 +1,15 @@
+.highlight_youtube iframe 
+{
+	width: 100%; !important;
+	height: 100%; !important;
+}
+
+.highlight_youtube_marker {
+    position: absolute;
+	opacity:0.9;
+    top: 16px;
+    left: 34px;
+    width: 48px;
+    height: 34px;
+    background-image: url(chrome-extension://__MSG_@@extension_id__/img/youtube_icon.png);
+}
