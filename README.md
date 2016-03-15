@@ -13,7 +13,7 @@ You can install Fair Steam through the Chrome web store: https://chrome.google.c
 
 1. [Download](https://github.com/EvergreenPotato/Fair_Steam/archive/master.zip) this repository
 2. Unzip the repository
-3. In Chrome go to Window => Extensions or open [chrome://extensions/](chrome://extensions/)
+3. In Chrome go to Window => Extensions or open chrome://extensions/
 4. Tick 'Developer Mode' in the top right corner of the screen
 5. Click the 'Load unpacked extension...' button and navigate to where you unzipped repo
 6. Enjoy using Fair Steam!

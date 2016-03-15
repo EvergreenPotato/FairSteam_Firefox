@@ -1,7 +1,7 @@
 {
   "name": "Fair Steam",
   "description": "Watch real gameplay video on Steam!",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "manifest_version": 2,
   "permissions": [
     "*://*.steamstatic.com/*",
@@ -10,25 +10,25 @@
     "webRequestBlocking",
 	"storage"
   ],
-  "web_accessible_resources": ["player_init.js",
-								"gamehighlightplayer_updated.js", 
-								"gamehighlightplayer_stub.js",
+  "web_accessible_resources": ["js/player_init.js",
+								"js/gamehighlightplayer_updated.js", 
+								"js/gamehighlightplayer_stub.js",
 								"img/youtube_icon.png"],
 							    
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["js/background.js"],
 	"persistent": true
   },
   "icons": {"128": "img/icon128px.png"},
   "content_scripts": [
     {
       "matches": ["*://store.steampowered.com/app/*"],
-      "js": ["jquery-1.12.1.js", "content_on_ready.js"], 
+      "js": ["js/jquery-1.12.1.js", "js/content_on_ready.js"], 
 	  "css": ["css/bettersteam.css"]
     },
 	{
       "matches": ["*://store.steampowered.com/app/*"],
-      "js": ["jquery-1.12.1.js", "content_on_start.js"], 
+      "js": ["js/jquery-1.12.1.js", "js/content_on_start.js"], 
 	  "run_at":  "document_start"
     }
   ]

@@ -6,7 +6,7 @@ var app_id = document.location.href.match(r)[0]
 chrome.runtime.sendMessage({action: "gaPageID", data:app_id})
 
 var s = document.createElement('script');
-s.src = chrome.extension.getURL('gamehighlightplayer_updated.js');
+s.src = chrome.extension.getURL('js/gamehighlightplayer_updated.js');
 s.onload = function() {
 	this.parentNode.removeChild(this);
 };
@@ -55,7 +55,7 @@ $.ajax({
 		$('#highlight_strip_scroll').width($('#highlight_strip_scroll').width() + Object.keys(formated_array).length*120)
 		
 
-		var actualCode = 'var rgYoutubeURLs = ' + JSON.stringify(formated_array); + '; console.log(rgYoutubeURLs);';
+		var actualCode = 'var rgYoutubeURLs = ' + JSON.stringify(formated_array); + ';';
 
 		var script = document.createElement('script');
 		script.textContent = actualCode;
@@ -77,7 +77,7 @@ $.ajax({
 var makeItRightJesse = function()
 {
 	var s = document.createElement('script');
-	s.src = chrome.extension.getURL('player_init.js');
+	s.src = chrome.extension.getURL('js/player_init.js');
 	s.onload = function() {
 		this.parentNode.removeChild(this);
 	};
