@@ -1,5 +1,5 @@
 # Fair Steam
-Fair Steam is a Google Chrome extension that adds important consumer-friendly features to the Steam website.
+Fair Steam is a browser extension that adds important consumer-friendly features to the Steam website.
 
 There is only one killer feature in this extension so far: 
 * It adds high quality gameplay video for games on Steam website! 
@@ -7,15 +7,15 @@ There is only one killer feature in this extension so far:
 ## Installation
 
 ##### Automatic
-You can install Fair Steam through the Chrome web store: https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
+You can't install Fair Steam through the addons.mozilla.org yet. 
 
 ##### Manual
 
-1. [Download](https://github.com/EvergreenPotato/Fair_Steam/archive/master.zip) this repository
-2. Unzip the repository
-3. In Chrome go to Window => Extensions or open chrome://extensions/
-4. Tick 'Developer Mode' in the top right corner of the screen
-5. Click the 'Load unpacked extension...' button and navigate to where you unzipped repo
+1. Visit about:config and set xpinstall.signatures.required to false.
+2. Download [Fair_Steam_Firefox.xpi](https://github.com/EvergreenPotato/Fair_Steam_Firefox/blob/master/Fair_Steam_Firefox.xpi) file.
+3. Navigate to about:addons.
+4. Drag and drop your XPI onto the page.
+5. Click “Install” in the prompt.
 6. Enjoy using Fair Steam!
 
 
@@ -24,3 +24,5 @@ You can install Fair Steam through the Chrome web store: https://chrome.google.c
 - Official Site - http://www.fairsteam.com
 - Chrome Web Store - https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
 - Steam Community Group - http://steamcommunity.com/groups/fairsteamextension
+- Twitter - https://twitter.com/fairsteam
+- Subreddit - https://www.reddit.com/r/fairsteam/
