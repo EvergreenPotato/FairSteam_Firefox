@@ -11,13 +11,18 @@ chrome.runtime.onInstalled.addListener(function(details){
     }
 });
 
-//Prevent Valve version of gamehighlightplayer.js to get our player working
+//Redirect from Valve's version of gamehighlightplayer.js to our stub file. Stub required to prevent errors in console. 
 chrome.webRequest.onBeforeRequest.addListener(
 	function(details) {
-		return {cancel: details.url.indexOf("gamehighlightplayer.js") != -1};
+
+		if( details.url.indexOf("gamehighlightplayer.js")>-1){
+			return {redirectUrl: "chrome-extension://"+chrome.runtime.id+"/js/gamehighlightplayer_stub.js" };
+		}
+
     },
     {urls: ["*://*.steamstatic.com/*"]},
     ["blocking"]);
+
 	
 		
 chrome.runtime.onMessage.addListener(

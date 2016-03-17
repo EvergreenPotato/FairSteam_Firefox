@@ -16,3 +16,9 @@ function BCanPlayWebm()
 
 	return ele.canPlayType('video/webm; codecs="vp8, vorbis"') == "probably"; // Eh, I dunno, probably.
 }
+
+
+(function( $ ){
+	$.fn.videoControls = function( options ) {
+	};
+})( jQuery );
