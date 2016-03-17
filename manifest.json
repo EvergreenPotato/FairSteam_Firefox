@@ -10,11 +10,15 @@
     "webRequestBlocking",
 	"storage"
   ],
+  "applications": {
+	  "gecko": {
+		"id": "eugene@whitechest.com"
+	  }
+  },
   "web_accessible_resources": ["js/player_init.js",
 								"js/gamehighlightplayer_updated.js", 
 								"js/gamehighlightplayer_stub.js",
-								"img/youtube_icon.png"],
-							    
+								"img/youtube_icon.png"],							    
   "background": {
     "scripts": ["js/background.js"],
 	"persistent": true
