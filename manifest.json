@@ -18,7 +18,7 @@
   "web_accessible_resources": ["js/player_init.js",
 								"js/gamehighlightplayer_updated.js", 
 								"js/gamehighlightplayer_stub.js",
-								"img/youtube_icon.png"],							    
+								"img/youtube_icon.png"],
   "background": {
     "scripts": ["js/background.js"],
 	"persistent": true
@@ -29,6 +29,11 @@
       "matches": ["*://store.steampowered.com/app/*"],
       "js": ["js/jquery-1.12.1.js", "js/content_on_ready.js"], 
 	  "css": ["css/bettersteam.css"]
+    },
+	{
+      "matches": ["*://store.steampowered.com/app/*"],
+      "js": ["js/jquery-1.12.1.js", "js/content_on_start.js"], 
+	  "run_at":  "document_start"
     }
   ]
 }

@@ -15,10 +15,7 @@ chrome.runtime.onInstalled.addListener(function(details){
 chrome.webRequest.onBeforeRequest.addListener(
 	function(details) {
 
-		if( details.url.indexOf("gamehighlightplayer.js")>-1){
-			return {redirectUrl: "chrome-extension://"+chrome.runtime.id+"/js/gamehighlightplayer_stub.js" };
-		}
-
+		return {cancel: details.url.indexOf("gamehighlightplayer.js") != -1};
     },
     {urls: ["*://*.steamstatic.com/*"]},
     ["blocking"]);
