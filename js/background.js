@@ -11,7 +11,7 @@ chrome.runtime.onInstalled.addListener(function(details){
     }
 });
 
-//Redirect from Valve's version of gamehighlightplayer.js to our stub file. Stub required to prevent errors in console. 
+//Redirect from Valve's version of gamehighlightplayer.js to our stub file. We need this to prevent errors. 
 chrome.webRequest.onBeforeRequest.addListener(
 	function(details) {
 
