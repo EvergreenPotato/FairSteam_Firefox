@@ -39,6 +39,9 @@ function BIsUserGameHDEnabled()
 {
 	//the cookie is stored as the inverse
 	var rgMatches = document.cookie.match( /(^|; )bGameHDDisabled=([^;]*)/ );
+	
+	if (!rgMatches) return false
+	
 	return !( rgMatches && rgMatches[2] == "true" );
 }
 
