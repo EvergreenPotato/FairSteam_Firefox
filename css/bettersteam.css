@@ -11,5 +11,5 @@
     left: 34px;
     width: 48px;
     height: 34px;
-    background-image: url(chrome-extension://__MSG_@@extension_id__/img/youtube_icon.png);
+    background-image: url(moz-extension://__MSG_@@extension_id__/img/youtube_icon.png);
 }
