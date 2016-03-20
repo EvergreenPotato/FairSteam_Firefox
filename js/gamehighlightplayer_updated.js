@@ -35,12 +35,27 @@ function BIsUserGameHighlightAutoplayEnabled()
 	return !( rgMatches && rgMatches[2] == "true" );
 }
 
+function BIsUserGameHDEnabled()
+{
+	//the cookie is stored as the inverse
+	var rgMatches = document.cookie.match( /(^|; )bGameHDDisabled=([^;]*)/ );
+	return !( rgMatches && rgMatches[2] == "true" );
+}
+
 function SetGameHighlightAutoplayEnabled( bEnabled )
 {
 	var dateExpires = new Date();
 	dateExpires.setTime( dateExpires.getTime() + 1000 * 60 * 60 * 24 * 365 * 10 );
 	document.cookie = 'bGameHighlightAutoplayDisabled=' + (!bEnabled ? 'true' : 'false') + '; expires=' + dateExpires.toGMTString() + ';path=/';
 }
+
+function SetGameHDEnabled( bEnabled )
+{
+	var dateExpires = new Date();
+	dateExpires.setTime( dateExpires.getTime() + 1000 * 60 * 60 * 24 * 365 * 10 );
+	document.cookie = 'bGameHDDisabled=' + (!bEnabled ? 'true' : 'false') + '; expires=' + dateExpires.toGMTString() + ';path=/';
+}
+
 
 var g_bUserSelectedTrailer = false;
 function BIsUserGameHighlightAudioEnabled()
@@ -252,12 +267,19 @@ HighlightPlayer.prototype.LoadHTML5Movie = function( id, bUserAction )
 	var strTarget = 'movie_' + id;
 	var $Target = $JFromIDOrElement( strTarget );
 
-	// use the global to tell the player that it should unmute this video
-	// That is stupid bro.
+	// Not the best logic here. use the global to tell the player that it should unmute this video is bad
 	//g_bUserSelectedTrailer = bUserAction;
 
 	if( $Target.length > 0 && $Target[0].play )
 	{
+		bIsHD = BIsUserGameHDEnabled()
+	
+		if(bIsHD)
+		{
+			$Target[0].setAttribute('data-default-src', $Target[0].src);
+			$Target[0].src = $Target[0].getAttribute('data-hd-src');
+		}
+		
 		$Target[0].load();
 		$Target[0].play();
 
@@ -269,8 +291,7 @@ HighlightPlayer.prototype.LoadYoutubeMovie = function( id, bUserAction )
 {
 	var strTarget = 'youtube_' + id;
 
-	// use the global to tell the player that it should unmute this video
-	// That is stupid bro.
+	// Not the best logic here. use the global to tell the player that it should unmute this video is bad
 	//g_bUserSelectedTrailer = bUserAction;
 
     videoID = this.m_rgYoutubeURLs[ id ]
@@ -863,6 +884,8 @@ HighlightPlayer.prototype.ShowScreenshotPopup = function( screenshotid )
 					'</div>' +
 					'<div class="autoplay_checkbox"></div>' +
 					'<div class="autoplay_label">Autoplay videos</div>' +
+					'<div class="hd_checkbox"></div>' +
+					'<div class="hd_label">HD</div>' +
 				'</div>' +
 				'<div class="progress_bar_wrapper">' +
 					'<div class="progress_bar_container">' +
@@ -922,6 +945,7 @@ HighlightPlayer.prototype.ShowScreenshotPopup = function( screenshotid )
 
 				$('.volume_icon',overlay).bind('click', function(e) { toggleMute(e, this); });
 				$('.autoplay_checkbox',overlay).bind('click', function(e) { toggleAutoplay(); });
+				$('.hd_checkbox',overlay).bind('click', function(e) { toggleHD(); });
 				$('.fullscreen_button',overlay).bind('click', function(e) { toggleFullscreen(); });
 				$('.progress_bar_container',overlay).bind('click', function(e) { progressClick(e, this); });
 
@@ -1023,6 +1047,12 @@ HighlightPlayer.prototype.ShowScreenshotPopup = function( screenshotid )
 			{
 				$('.play_button',overlay).removeClass('play');
 				$('.play_button',overlay).addClass('pause');
+				
+				if( BIsUserGameHDEnabled() )
+				{
+					$('.hd_checkbox',overlay).addClass("checked");
+				}
+				
 				updateVolume();
 			}
 
@@ -1110,26 +1140,6 @@ HighlightPlayer.prototype.ShowScreenshotPopup = function( screenshotid )
 						eleContainer.webkitRequestFullScreen();
 					else if( eleContainer.mozRequestFullScreen )
 						eleContainer.mozRequestFullScreen();
-
-					if( !bIsHD )
-					{
-						// Switch to HD video
-						var videoPosition = videoControl.currentTime;
-						videoControl.pause();
-						videoControl.preload = "metadata";
-
-						$(videoControl).bind('loadedmetadata', function() {
-							console.log("loadedmetadata");
-							this.currentTime = videoPosition;
-							videoControl.play();
-							$(videoControl).unbind('loadedmetadata')
-						});
-
-						videoControl.src = $(videoControl).data('hd-src');
-						videoControl.load();
-						bIsHD = true;
-					}
-
 				} else {
 					if( document.cancelFullscreen )
 						document.cancelFullscreen();
@@ -1151,6 +1161,44 @@ HighlightPlayer.prototype.ShowScreenshotPopup = function( screenshotid )
 					$('.autoplay_checkbox',overlay).removeClass("checked");
 			}
 
+			function toggleHD()
+			{
+				var bIsHD = !BIsUserGameHDEnabled();
+
+				SetGameHDEnabled( bIsHD );
+
+				if( bIsHD )
+					$('.hd_checkbox',overlay).addClass("checked");
+				else
+					$('.hd_checkbox',overlay).removeClass("checked");
+					
+					
+				var videoPosition = videoControl.currentTime;
+				videoControl.pause();
+				videoControl.preload = "metadata";
+
+				$(videoControl).bind('loadedmetadata', function() {
+					console.log("loadedmetadata");
+					this.currentTime = videoPosition;
+					videoControl.play();
+					$(videoControl).unbind('loadedmetadata')
+				});	
+				if( bIsHD )
+				{
+					// Switch to HD video
+					videoControl.setAttribute('data-default-src', videoControl.src);
+					videoControl.src = $(videoControl).data('hd-src');
+					videoControl.load();
+				}
+				else
+				{
+					// Switch back from HD video
+					videoControl.src = $(videoControl).data('default-src');
+					videoControl.load();
+				}
+					
+			}			
+			
 			setup();
 			hide();
 		});
