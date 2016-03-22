@@ -24,22 +24,26 @@ $.ajax({
 	success: function(data){ 
 		var formated_array = new Object();
 		var thumb_data = new Object();
-		
+        var channel_data = new Object();
+
 		if (!data['data']) return
 		
 		
-		for (var i = data['data'].length; i--;){
+		for (var i = data['data'].length; i--;) {
 			var item = data['data'][i];
 			
 			formated_array['yv_'+item.yid] = item.yid
 			thumb_data['yv_'+item.yid] = item.thumb
+            channel_data['yv_'+item.yid] = item.channel
 		}
 		
-		for(key in thumb_data)
-		{
+		for(key in thumb_data) {
+            var channel_name = channel_data[key].length > 17 ? channel_data[key].substring(0,14)+"..." : channel_data[key];
+
 			highlight_strip_youtube = '<div class="highlight_strip_item highlight_strip_youtube" id="thumb_youtube_'+ key +'">'+
-				'<img style="max-width: 100%;max-height:100%;" src="'+thumb_data[key]+'" >'+
+				'<img style="max-width: 100%;max-height:100%;" src="'+thumb_data[key]+'">'+
 				'<div class="highlight_youtube_marker"></div>'+
+                '<div class="highlight_channel_marker">'+channel_name+'</div>'+
 			'</div>'
 			
 			$('.highlight_selector').after(highlight_strip_youtube);
@@ -59,7 +63,7 @@ $.ajax({
 
 		var script = document.createElement('script');
 		script.textContent = actualCode;
-		(document.head||document.documentElement).appendChild(script);
+		(document.head || document.documentElement).appendChild(script);
 		script.parentNode.removeChild(script);
 		
 		chrome.runtime.sendMessage({action: "gaPageSuccess"})
