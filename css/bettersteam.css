@@ -6,12 +6,27 @@
 
 .highlight_youtube_marker {
     position: absolute;
-	opacity:0.9;
-    top: 16px;
-    left: 34px;
-    width: 48px;
-    height: 34px;
+    z-index:100;
+	opacity:0.7;
+    top: 20px;
+    left: 40px;
+    width: 36px;
+    height: 25px;
     background-image: url(chrome-extension://__MSG_@@extension_id__/img/youtube_icon.png);
+}
+
+.highlight_channel_marker {
+    position: absolute;
+    opacity:0.8;
+    background: #000000;
+    left:0;
+    top:49px;
+    width: 116px;
+    height: 16px;
+    text-align:center;
+    z-index:100;
+    font-size:12px;
+    line-height:16px;
 }
 
 .html5_video_overlay .hd_checkbox {
