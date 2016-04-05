@@ -1,13 +1,15 @@
-# Fair Steam
-Fair Steam is a browser extension that adds important consumer-friendly features to the Steam website.
+# FairSteam
+FairSteam is a browser extension that adds important consumer-friendly features to the Steam website.
 
 There is only one killer feature in this extension so far: 
 * It adds high quality gameplay video for games on Steam website! 
 
+This is a repository for the **Firefox version** of the extension. It's a branch of the main Chrome version repository with some platform specific changes. 
+
 ## Installation
 
 ##### Automatic
-You can't install Fair Steam through the addons.mozilla.org yet. 
+You can't install FairSteam through the addons.mozilla.org yet. 
 
 ##### Manual
 
@@ -22,6 +24,7 @@ You can't install Fair Steam through the addons.mozilla.org yet.
 ## Links
 
 - Official Site - http://www.fairsteam.com
+- Firefox Version - https://github.com/EvergreenPotato/FairSteam_Firefox
 - Chrome Web Store - https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
 - Steam Community Group - http://steamcommunity.com/groups/fairsteamextension
 - Twitter - https://twitter.com/fairsteam

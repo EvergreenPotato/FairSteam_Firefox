@@ -22,3 +22,4 @@ function BCanPlayWebm()
 	$.fn.videoControls = function( options ) {
 	};
 })( jQuery );
+
