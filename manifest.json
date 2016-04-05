@@ -1,7 +1,7 @@
 {
-  "name": "Fair Steam",
+  "name": "FairSteam",
   "description": "Watch real gameplay video on Steam!",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "manifest_version": 2,
   "permissions": [
     "*://*.steamstatic.com/*",

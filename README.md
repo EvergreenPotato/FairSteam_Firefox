@@ -1,17 +1,19 @@
-# Fair Steam
-Fair Steam is a Google Chrome extension that adds important consumer-friendly features to the Steam website.
+# FairSteam
+FairSteam is a browser extension that adds important consumer-friendly features to the Steam website.
 
 There is only one killer feature in this extension so far: 
 * It adds high quality gameplay video for games on Steam website! 
 
+This is a repository for the **Chrome version** of the extension. It's the main repository, and all the other forks(Firefox) are just branches of this one. 
+
 ## Installation
 
 ##### Automatic
-You can install Fair Steam through the Chrome web store: https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
+You can install FairSteam through the Chrome web store: https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
 
 ##### Manual
 
-1. [Download](https://github.com/EvergreenPotato/Fair_Steam/archive/master.zip) this repository
+1. [Download](https://github.com/EvergreenPotato/FairSteam/archive/master.zip) this repository
 2. Unzip the repository
 3. In Chrome go to Window => Extensions or open chrome://extensions/
 4. Tick 'Developer Mode' in the top right corner of the screen
