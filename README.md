@@ -9,12 +9,12 @@ This is a repository for the **Firefox version** of the extension. It's a branch
 ## Installation
 
 ##### Automatic
-You can't install FairSteam through the addons.mozilla.org yet. 
+You can't install FairSteam through the addons.mozilla.org yet. We are waiting for the official FF46 release.
 
 ##### Manual
 
 1. Visit about:config and set xpinstall.signatures.required to false.
-2. Download [Fair_Steam_Firefox.xpi](https://github.com/EvergreenPotato/Fair_Steam_Firefox/blob/master/Fair_Steam_Firefox.xpi) file.
+2. Download [Fair_Steam_Firefox.xpi](https://github.com/EvergreenPotato/Fair_Steam_Firefox/blob/master/FairSteam_Firefox_v1.0.8.xpi) file.
 3. Navigate to about:addons.
 4. Drag and drop your XPI onto the page.
 5. Click “Install” in the prompt.
@@ -24,7 +24,7 @@ You can't install FairSteam through the addons.mozilla.org yet.
 ## Links
 
 - Official Site - http://www.fairsteam.com
-- Firefox Version - https://github.com/EvergreenPotato/FairSteam_Firefox
+- Chrome Version - https://github.com/EvergreenPotato/FairSteam
 - Chrome Web Store - https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
 - Steam Community Group - http://steamcommunity.com/groups/fairsteamextension
 - Twitter - https://twitter.com/fairsteam
