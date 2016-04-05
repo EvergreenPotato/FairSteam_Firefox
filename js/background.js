@@ -14,7 +14,6 @@ chrome.runtime.onInstalled.addListener(function(details){
 //Redirect from Valve's version of gamehighlightplayer.js to our stub file. We need this to prevent errors. 
 chrome.webRequest.onBeforeRequest.addListener(
 	function(details) {
-
 		if( details.url.indexOf("gamehighlightplayer.js")>-1){
 			return {redirectUrl: "chrome-extension://"+chrome.runtime.id+"/js/gamehighlightplayer_stub.js" };
 		}
