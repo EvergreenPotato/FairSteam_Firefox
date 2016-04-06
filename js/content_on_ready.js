@@ -114,7 +114,7 @@ $.ajax({
 			
 			rating_change_html = '<div onclick="window.location=\'#app_reviews_hash\'" style="cursor: pointer;" data-store-tooltip="'+reviews_text+'" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">'+
 									'<div class="release_date">'+
-										'Current version: <span class="game_review_summary'+reviews_style+'" itemprop="description">'+reviews_descrition+'</span>'+
+										'Recent reviews: <span class="game_review_summary'+reviews_style+'" itemprop="description">'+reviews_descrition+'</span>'+
 											'<span class="responsive_hidden"> ('+reviews_count_str+' reviews) </span>'+
 											'<span class="nonresponsive_hidden responsive_reviewdesc"> - '+reviews_text+'</span>'+
 

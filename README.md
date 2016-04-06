@@ -27,3 +27,5 @@ You can install FairSteam through the Chrome web store: https://chrome.google.co
 - Firefox Version - https://github.com/EvergreenPotato/FairSteam_Firefox
 - Chrome Web Store - https://chrome.google.com/webstore/detail/fair-steam/bjnnjbpfiahjcklcecoplaepepppkkad
 - Steam Community Group - http://steamcommunity.com/groups/fairsteamextension
+- Twitter - https://twitter.com/fairsteam
+- Subreddit - https://www.reddit.com/r/fairsteam/
