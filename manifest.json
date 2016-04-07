@@ -1,7 +1,7 @@
 {
   "name": "FairSteam",
   "description": "Watch real gameplay video on Steam!",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "manifest_version": 2,
   "permissions": [
     "*://*.steamstatic.com/*",
@@ -34,7 +34,7 @@
     },
 	{
       "matches": ["*://store.steampowered.com/app/*"],
-      "js": ["js/jquery-1.12.1.js", "js/content_on_start.js"], 
+      "js": ["js/jquery-1.12.3.js", "js/content_on_start.js"], 
 	  "run_at":  "document_start"
     }
   ]
