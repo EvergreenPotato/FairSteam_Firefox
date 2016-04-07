@@ -14,7 +14,7 @@ You can install FairSteam through the Firefox Add-ons site: https://addons.mozil
 ##### Manual
 
 1. Visit about:config and set xpinstall.signatures.required to false.
-2. Download [Fair_Steam_Firefox.xpi](https://github.com/EvergreenPotato/Fair_Steam_Firefox/blob/master/FairSteam_Firefox.xpi) file.
+2. Download [FairSteam_Firefox.xpi](https://github.com/EvergreenPotato/Fair_Steam_Firefox/blob/master/FairSteam_Firefox.xpi) file.
 3. Navigate to about:addons.
 4. Drag and drop your XPI onto the page.
 5. Click “Install” in the prompt.
