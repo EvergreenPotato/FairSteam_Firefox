@@ -16,6 +16,7 @@ s.onload = function() {
 $.ajax({
 	url: "//www.fairsteam.com/app/"+app_id+"?api_version=2",
 	dataType: 'json',
+    timeout: 5000,
 	success: function(data){ 
 		var formated_array = new Object();
 		var thumb_data = new Object();
@@ -90,10 +91,12 @@ $.ajax({
 				reviews_descrition = 'Mostly Positive'
 			else if (reviews_percent>= 40)
 				reviews_descrition = 'Mixed'
-			else if (reviews_percent< 40 && reviews_count<100)
+			else if (reviews_percent>= 20)
 				reviews_descrition = 'Mostly Negative'
-			else 
+			else if (reviews_percent < 20 && reviews_count >100) 
 				reviews_descrition = 'Overwhelmingly Negative' 
+			else
+				reviews_descrition = 'Very Negative' 
 			
 			if (reviews_count < 50)
 			{ 
@@ -114,14 +117,12 @@ $.ajax({
 			
 			rating_change_html = '<div onclick="window.location=\'#app_reviews_hash\'" style="cursor: pointer;" data-store-tooltip="'+reviews_text+'" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">'+
 									'<div class="release_date">'+
-										'Current version: <span class="game_review_summary'+reviews_style+'" itemprop="description">'+reviews_descrition+'</span>'+
+										'Recent reviews: <span class="game_review_summary'+reviews_style+'" itemprop="description">'+reviews_descrition+'</span>'+
 											'<span class="responsive_hidden"> ('+reviews_count_str+' reviews) </span>'+
 											'<span class="nonresponsive_hidden responsive_reviewdesc"> - '+reviews_text+'</span>'+
 
 									'</div>'+
 								'</div>';
-								
-			console.log($('.glance_ctn_responsive_left:first-child'))
 								
 			$('.glance_ctn_responsive_left div:eq(0)').before(rating_change_html);		
 			
