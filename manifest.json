@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": ["*://store.steampowered.com/app/*"],
-      "js": ["js/jquery-1.12.1.js", "js/content_on_ready.js"], 
+      "js": ["js/jquery-1.12.3.js", "js/content_on_ready.js"], 
 	  "css": ["css/bettersteam.css"]
     }
   ]
