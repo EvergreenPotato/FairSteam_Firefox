@@ -1,7 +1,7 @@
 {
   "name": "FairSteam",
   "description": "Real gameplay video and recent reviews info on Steam!",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "manifest_version": 2,
   "permissions": [
     "*://*.steamstatic.com/*",
@@ -25,7 +25,7 @@
 	"persistent": true
   },
   "icons": {"48": "img/icon48px.png",
-			"96": "img/icon48px.png"},
+			"96": "img/icon96px.png"},
   "content_scripts": [
     {
       "matches": ["*://store.steampowered.com/app/*"],
