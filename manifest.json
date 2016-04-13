@@ -1,6 +1,6 @@
 {
   "name": "FairSteam",
-  "description": "Watch real gameplay video on Steam!",
+  "description": "Real gameplay video and recent reviews info on Steam!",
   "version": "1.0.10",
   "manifest_version": 2,
   "permissions": [

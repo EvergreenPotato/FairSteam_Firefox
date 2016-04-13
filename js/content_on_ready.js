@@ -80,7 +80,7 @@ $.ajax({
 			reviews_days = rating_change['days']
 			
 			reviews_count_str = reviews_count.toLocaleString('en')	
-			reviews_text = reviews_percent+"% of the "+reviews_count_str+" user reviews for this game are positive for the last "+ reviews_days+" days."
+			reviews_text = reviews_percent+"% of the recent "+reviews_count_str+" user reviews for this game are positive."
 
 			//http://www.gamasutra.com/blogs/LarsDoucet/20141006/227162/Fixing_Steams_User_Rating_Charts.php
 			if (reviews_percent>= 95)
@@ -93,12 +93,12 @@ $.ajax({
 				reviews_descrition = 'Mixed'
 			else if (reviews_percent>= 20)
 				reviews_descrition = 'Mostly Negative'
-			else if (reviews_percent < 20 && reviews_count >100) 
+			else if (reviews_percent < 20 && reviews_count >50) 
 				reviews_descrition = 'Overwhelmingly Negative' 
 			else
 				reviews_descrition = 'Very Negative' 
 			
-			if (reviews_count < 50)
+			if (reviews_count < 20)
 			{ 
 				if (reviews_percent>=80)
 					reviews_descrition = 'Positive'
