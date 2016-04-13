@@ -21,15 +21,3 @@ chrome.webRequest.onBeforeRequest.addListener(
     ["blocking"]);
 
 	
-		
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-	// Messages from content scripts
-  });
-  
-  
-chrome.runtime.onMessageExternal.addListener(
-  function(request, sender, sendResponse) {
-	// Messages from web page
-		
-});
