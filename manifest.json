@@ -1,7 +1,7 @@
 {
   "name": "FairSteam",
   "description": "Real gameplay video and recent reviews info on Steam!",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "manifest_version": 2,
   "permissions": [
     "*://*.steamstatic.com/*",
