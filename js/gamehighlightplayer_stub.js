@@ -4,6 +4,10 @@ function HighlightPlayer( args )
 {
 }
 
+HighlightPlayer.prototype.HighlightScreenshot = function( id, bSkipAnimation )
+{
+}
+
 function BDoesUserPreferHTML5()
 {
 	var rgMatches = document.cookie.match( /(^|; )bShouldUseHTML5=([^;]*)/ );
