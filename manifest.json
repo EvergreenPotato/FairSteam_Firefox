@@ -21,8 +21,7 @@
 								"js/gamehighlightplayer_stub.js",
 								"img/youtube_icon.png"],
   "background": {
-    "scripts": ["js/background.js"],
-	"persistent": true
+    "scripts": ["js/background.js"]
   },
   "icons": {"48": "img/icon48px.png",
 			"96": "img/icon96px.png"},
